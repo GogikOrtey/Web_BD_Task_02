@@ -1,0 +1,6 @@
+sqlite3 todolist.db
+
+.output todolist.sql
+.dump
+
+.quit

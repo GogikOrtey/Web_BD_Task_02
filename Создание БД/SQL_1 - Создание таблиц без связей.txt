@@ -1,0 +1,80 @@
+Конечно, я могу помочь вам создать SQL-запросы для создания этих таблиц в SQLite. Вот примеры запросов:
+
+```sql
+CREATE TABLE Задачи (
+  ID INTEGER PRIMARY KEY,
+  Название_задачи TEXT NOT NULL,
+  Описание_задачи TEXT,
+  Дата_начала DATE,
+  Дата_окончания DATE,
+  Статус INTEGER,
+  Приоритет INTEGER
+);
+
+CREATE TABLE Пользователи (
+  ID INTEGER PRIMARY KEY,
+  Имя_пользователя TEXT NOT NULL,
+  Адрес_электронной_почты TEXT,
+  ID_Роли INTEGER
+);
+
+CREATE TABLE Роли (
+  ID INTEGER PRIMARY KEY,
+  Название_роли TEXT NOT NULL,
+  Описание TEXT
+);
+
+CREATE TABLE Назначения (
+  ID INTEGER PRIMARY KEY,
+  ID_пользователя INTEGER,
+  ID_задачи INTEGER,
+  Дата_назначения DATE
+);
+
+CREATE TABLE Статусы (
+  ID INTEGER PRIMARY KEY,
+  Название_статуса TEXT NOT NULL
+);
+
+CREATE TABLE Приоритеты (
+  ID INTEGER PRIMARY KEY,
+  Название_приоритета TEXT NOT NULL
+);
+
+CREATE TABLE Проекты (
+  ID INTEGER PRIMARY KEY,
+  Название_проекта TEXT NOT NULL,
+  Описание_проекта TEXT,
+  ID_задачи INTEGER
+);
+
+CREATE TABLE Комментарии (
+  ID INTEGER PRIMARY KEY,
+  ID_пользователя INTEGER,
+  ID_задачи INTEGER,
+  Текст_комментария TEXT,
+  Дата_комментария DATE
+);
+
+CREATE TABLE Документы (
+  ID INTEGER PRIMARY KEY,
+  Название_документа TEXT NOT NULL,
+  Описание_документа TEXT,
+  ID_Задачи INTEGER,
+  Дата_создания DATE,
+  Ссылка_на_файл TEXT
+);
+
+CREATE TABLE Теги (
+  ID INTEGER PRIMARY KEY,
+  Название_тега TEXT NOT NULL
+);
+
+CREATE TABLE Назначения_тегов (
+  ID INTEGER PRIMARY KEY,
+  ID_задачи INTEGER,
+  ID_тега INTEGER
+);
+```
+
+Обратите внимание, что в этих запросах не учитываются связи между таблицами. Если вы хотите добавить связи между таблицами, вам потребуется добавить ограничения внешнего ключа в соответствующие таблицы. Например, если вы хотите связать таблицу "Задачи" с таблицей "Статусы", вы можете добавить следующую строку в запрос `CREATE TABLE` для таблицы
