@@ -1,0 +1,21 @@
+Команды импорта данных из .csv файлов:
+
+cd Переход в директорию, где лежит файл sqlite3.exe
+
+./sqlite3.exe todolist.db
+
+sqlite> .mode csv
+sqlite> .separator ","
+
+sqlite> .import csv_files/Tasks.csv Задачи
+sqlite> .import csv_files/Users.csv Пользователи
+sqlite> .import csv_files/Roles.csv Роли
+sqlite> .import csv_files/Sets.csv Назначения
+sqlite> .import csv_files/Statuses.csv Статусы
+sqlite> .import csv_files/Priority.csv Приоритеты
+sqlite> .import csv_files/Progect.csv Проекты
+sqlite> .import csv_files/Comments.csv Комментарии
+sqlite> .import csv_files/Documents.csv Документы
+sqlite> .import csv_files/Tegs.csv Теги
+sqlite> .import csv_files/TegsSet.csv Назначения_тегов
+
